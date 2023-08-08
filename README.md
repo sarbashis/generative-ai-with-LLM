@@ -49,8 +49,17 @@ __Generative AI project Lifecycle__
 
 ```mermaid
 
-flowchat LR
+flowchat LR;
 
     Scope--> select --> adapt and align model --> Application integration
 
+```
+
+```mermaid
+
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 ```
