@@ -47,19 +47,68 @@ temperature
 
 __Generative AI project Lifecycle__
 
-```mermaid
-
-flowchat LR;
-
-    Scope--> select --> adapt and align model --> Application integration
-
-```
 
 ```mermaid
-
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+flowchart LR
+   A[Scope ] --> B[Select]
+   B --> C[Adapt and Align model]
+   C -->  D[Application Integration] 
 ```
+
+__Pre-Training large language models__
+Models hubs: 
+Model Architectures and rpe-training objectives
+
+### Encoder Only Models:
+     Autoencoding models: They are trained on large amount of text data with a objective to predict the mask token [Mask language modelling]. They are taking consideration not only the previous tokens but also token after the word. That's means it is taking bidirection context to do the prediction. 
+
+     
+     Good use cases: 
+            Classification like sentiment analysis,
+            Named entitiy recognition
+            Word classification 
+
+
+    Example Models are: BERT, ROBERTA
+
+
+### Decoder Only Models:
+    Auto regressive models: Causal langauge Modeling (CLM). it is only consider the context from previous token so it is only cosidering unidirectional context and try to predict the next token. 
+
+    Good use cases:
+        Text generation
+    
+    Example: GPT, BLOOM
+
+
+### Endcode Decoder Models:
+    It is a sequence-to-sequence model and the training varies from model to model. For T5, it uses Span Corruption to mask randomly some words and then those mask words are replaced with a sentinel token. Sentinel token is not part of any word in the vocubulary. Decoder then predict the sentinel words. 
+
+
+  Good use cases:
+    Translation
+    Text summerization
+    Question Answering
+
+  Example Model:
+   - T5
+   - BART
+
+![Model Training summery](./model-training.png)
+
+
+__Computational Challenges of training LLMs__
+
+__Quantization__:
+
+__Scaling laws and compute-optimal models__
+
+
+
+
+# Week 2 Fine-tuning LLMs with instruction
+ ![GeneAI Life Cycle](./gen-ai-lifecycle.png)
+
+ Catastrophic forgeting 
+ 
+ Parameter efficient fine-tuning (PEFT)
